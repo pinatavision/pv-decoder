@@ -7,7 +7,7 @@ use feature "switch";
 
 # Decode a barcode associated with a Piñata Vision (PV) card
 
-# Version 1.0  05DEC2012  Kathryn Jensen
+# Version 1.01  26FEB2013  Kathryn Jensen
 
 # More details about the barcode can be found at:
 # http://pinataisland.info/viva/Pinata_Vision_barcode
@@ -96,7 +96,7 @@ while (<>) {
     
     # Handle human-readable display of encoded data
     
-    print "$filename -> ";
+    print "$filename -> " if $filename =~ /\S/;
     &decode_data($encoded_data);
     print "\n";
 
